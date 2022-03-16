@@ -39,7 +39,7 @@ class StaffChat extends PluginBase implements Listener
 		$this->staffChat[$sender->getName()] = true;
 		$announce = $this->getConfig()->get('announce-state', true);
 		if (!$announce) return;
-		$joinFormat = $this->getConfig()->get('join', "&b%player% &fjoined the staff chat");
+		$joinFormat = $this->getConfig()->get('leave', "&b%player% &fjoined the staff chat");
 		$joinFormat = str_replace("%player%", $sender->getName(), $joinFormat);
 		$joinMessage = $this->colorize($joinFormat);
 		foreach ($this->staffChat as $staff => $value) {
